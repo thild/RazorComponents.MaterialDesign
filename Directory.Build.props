@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup>
+        <AspNetCoreVersion>3.0.0-preview7.19365.7</AspNetCoreVersion>
+        <AspNetCoreExtensionsVersion>3.0.0-preview7.19362.4</AspNetCoreExtensionsVersion>
+        <SystemVersion>4.6.0-preview7.19362.9</SystemVersion>
+        <EntityFrameworkCoreVersion>3.0.0-preview7.19328.10</EntityFrameworkCoreVersion>
+        <ComponentsPackageVersion>3.0.0-preview7.19365.7</ComponentsPackageVersion>
+    </PropertyGroup>
+</Project>

@@ -8,6 +8,12 @@ namespace RazorComponents.MaterialDesign
 {
     public abstract class MdcComponentBase : ComponentBase
     {
+
+        /// <summary>
+        /// Gets or sets a collection of additional attributes that will be applied to the created element.
+        /// </summary>
+        [Parameter(CaptureUnmatchedValues = true)] public IReadOnlyDictionary<string, object> Attributes { get; private set; }
+
         bool isFirstRender = true;
 
         protected override Task OnAfterRenderAsync()

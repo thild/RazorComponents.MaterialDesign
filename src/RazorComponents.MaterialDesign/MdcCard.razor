@@ -1,0 +1,92 @@
+﻿<div class="mdc-card @CardClass">
+  <div class="mdc-card__primary-action @PrimaryActionClass" @onclick="@OnPrimaryAction" tabindex="0" >
+    @if(Media != null) {
+      <div class="mdc-card__media @MediaClass">
+        <div class="mdc-card__media-content">
+          @Media
+        </div>
+      </div>
+    }
+    <div class="mdc-card__primary">
+      @if(Thumbnail != null) {
+        <div class="mdc-card__thumbnail @ThumbnailClass">
+          @Thumbnail
+        </div>
+      }
+      @if(Title != null) {
+        <h2 class="mdc-card__title @TitleClass mdc-typography mdc-typography--headline6">@Title</h2>
+      }
+      @if(Subtitle != null) {
+        <h3 class="mdc-card__subtitle @SubtitleClass mdc-typography mdc-typography--subtitle2">@Subtitle</h3>
+      }
+    </div>
+    @if(Body != null) {
+      <div class="mdc-card__secondary @BodyClass mdc-typography mdc-typography--body2">@Body</div>
+    }
+  </div>
+  @if(Actions != null) {
+    <div class="mdc-card__actions">
+      @Actions
+      <!-- <div class="mdc-card__action-buttons">
+        <button class="mdc-button mdc-card__action mdc-card__action--button">Read</button>
+        <button class="mdc-button mdc-card__action mdc-card__action--button">Bookmark</button>
+      </div>
+        <div class="mdc-card__action-icons">
+          <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+          </button>
+          <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="Share" data-mdc-ripple-is-unbounded="true">share</button>
+          <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+        </div> -->
+    </div>
+  }
+</div>
+
+@code {
+
+    [Parameter]
+    string CardClass { get; set; }
+    
+    [Parameter]
+    string PrimaryActionClass { get; set; }
+    
+    [Parameter]
+    RenderFragment Thumbnail { get; set; }
+
+    [Parameter]
+    string ThumbnailClass { get; set; }
+
+    [Parameter]
+    RenderFragment Title  { get; set; }
+
+    [Parameter]
+    string TitleClass  { get; set; }
+
+    [Parameter]
+    RenderFragment Subtitle  { get; set; }
+
+    [Parameter]
+    string SubtitleClass  { get; set; }
+
+    [Parameter]
+    RenderFragment Body  { get; set; }
+
+    [Parameter]
+    string BodyClass  { get; set; }
+
+    [Parameter]
+    RenderFragment Media  { get; set; }
+
+    [Parameter]
+    RenderFragment MediaClass  { get; set; }
+
+    [Parameter]
+    RenderFragment SupportingText  { get; set; }
+
+    [Parameter]
+    RenderFragment Actions  { get; set; }
+
+    [Parameter] EventCallback OnPrimaryAction { get; set; }
+
+  }

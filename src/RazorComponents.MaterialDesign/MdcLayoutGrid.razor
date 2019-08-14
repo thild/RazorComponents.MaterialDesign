@@ -1,0 +1,20 @@
+﻿@typeparam GridItem
+
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+     @foreach (var item in Items) 
+     {
+         <MdcCell>
+            @Cell(item)
+         </MdcCell>
+     }
+  </div>
+</div>
+
+@code {
+    [Parameter]
+    IEnumerable<GridItem> Items { get; set; }
+
+    [Parameter]
+    RenderFragment<GridItem> Cell { get; set; }
+}
