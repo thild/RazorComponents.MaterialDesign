@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<div @ref="dialogElem" class="mdc-dialog">
+<div @ref:suppressField="dialogElem" class="mdc-dialog">
   <div class="mdc-dialog__container">
     <div class="mdc-dialog__surface">
       <h2 class="mdc-dialog__title">@Title</h2>
@@ -13,12 +13,12 @@
   <div class="mdc-dialog__scrim"></div>
 </div>
 
-@functions {
-    [Parameter] string Title { get; set; }
-    [Parameter] RenderFragment Body { get; set; }
-    [Parameter] RenderFragment Buttons { get; set; }
+@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public RenderFragment Body { get; set; }
+    [Parameter] public RenderFragment Buttons { get; set; }
 
-    ElementRef dialogElem;
+    ElementReference dialogElem;
 
     public Task<string> ShowAsync()
         => jsRuntime.InvokeAsync<string>("BlazorMaterial.dialog.show", dialogElem);

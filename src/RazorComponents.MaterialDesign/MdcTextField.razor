@@ -1,7 +1,7 @@
 ﻿@inherits MdcInputComponentBase<string>
 @inject IJSRuntime jsRuntime
     
-<div @ref="textFieldElem" class="mdc-text-field">
+<div @ref:suppressField="textFieldElem" class="mdc-text-field">
     <input type="@Type" id=@id class="mdc-text-field__input @FieldClass"
            @bind=@CurrentValue />
 
@@ -9,12 +9,12 @@
     <div class="mdc-line-ripple"></div>
 </div>
 
-@functions {
+@code {
     string id = Guid.NewGuid().ToString();
-    ElementRef textFieldElem;
+    ElementReference textFieldElem;
 
-    [Parameter] string Type { get; set; } = "text";
-    [Parameter] string Label { get; set; }
+    [Parameter] public string Type { get; set; } = "text";
+    [Parameter] public string Label { get; set; }
 
     protected override Task OnAfterFirstRenderAsync()
         => jsRuntime.InvokeAsync<object>(

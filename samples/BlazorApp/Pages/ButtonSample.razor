@@ -5,25 +5,25 @@
 See <code>Button.cshtml</code> for sources.
 
 <p>
-    <MdcButton onclick="@LogMessage">
+    <MdcButton @onclick="LogMessage">
         Default style (raised)
     </MdcButton>
 </p>
 
 <p>
-    <MdcButton onclick="@LogMessage" ButtonStyle="@MdcButton.None">
+    <MdcButton @onclick="LogMessage" ButtonStyle="@MdcButton.None">
         None style
     </MdcButton>
 </p>
 
 <p>
-    <MdcButton onclick="@LogMessage" Enabled="@false">
+    <MdcButton @onclick="LogMessage" Enabled="@false">
         Enabled = false
     </MdcButton>
 </p>
 
 <p>
-    <MdcButton onclick="@LogMessage">
+    <MdcButton @onclick="LogMessage">
         @MdcButton.Icon("save")
         With icon
     </MdcButton>
@@ -36,7 +36,7 @@ See <code>Button.cshtml</code> for sources.
     }
 </ul>
 
-@functions {
+@code {
     List<string> log = new List<string>();
 
     void LogMessage()

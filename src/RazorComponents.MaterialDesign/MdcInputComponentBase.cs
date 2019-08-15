@@ -22,12 +22,12 @@ namespace RazorComponents.MaterialDesign
         /// <summary>
         /// Gets a value for the component's 'id' attribute.
         /// </summary>
-        [Parameter] public string Id { get; private set; }
+        [Parameter] public string Id { get; set; }
 
         /// <summary>
         /// Gets a value for the component's 'class' attribute.
         /// </summary>
-        [Parameter] public string Class { get; private set; }
+        [Parameter] public string Class { get; set; }
 
         /// <summary>
         /// Gets or sets the value of the input. This should be used with two-way binding.
@@ -35,27 +35,27 @@ namespace RazorComponents.MaterialDesign
         /// <example>
         /// @bind-Value="@model.PropertyName"
         /// </example>
-        [Parameter] public T Value { get; private set; }
+        [Parameter] public T Value { get; set; }
 
         /// <summary>
         /// Gets or sets a callback that updates the bound value.
         /// </summary>
-        [Parameter] public EventCallback<T> ValueChanged { get; private set; }
+        [Parameter] public EventCallback<T> ValueChanged { get; set; }
 
         /// <summary>
         /// Gets or sets an expression that identifies the bound value.
         /// </summary>
-        [Parameter] public Expression<Func<T>> ValueExpression { get; private set; }
+        [Parameter] public Expression<Func<T>> ValueExpression { get; set; }
 
         /// <summary>
         /// Gets the associated <see cref="Microsoft.AspNetCore.Components.Forms.EditContext"/>.
         /// </summary>
-        protected EditContext EditContext { get; private set; }
+        protected EditContext EditContext { get; set; }
 
         /// <summary>
         /// Gets the <see cref="FieldIdentifier"/> for the bound value.
         /// </summary>
-        protected FieldIdentifier FieldIdentifier { get; private set; }
+        protected FieldIdentifier FieldIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the current value of the input.
@@ -164,7 +164,7 @@ namespace RazorComponents.MaterialDesign
             : $"{Class} {FieldClass}";
 
         /// <inheritdoc />
-        public override Task SetParametersAsync(ParameterCollection parameters)
+        public override Task SetParametersAsync(ParameterView parameters)
         {
             parameters.SetParameterProperties(this);
 
@@ -196,7 +196,7 @@ namespace RazorComponents.MaterialDesign
             }
 
             // For derived components, retain the usual lifecycle with OnInit/OnParametersSet/etc.
-            return base.SetParametersAsync(ParameterCollection.Empty);
+            return base.SetParametersAsync(ParameterView.Empty);
         }
     }
 }

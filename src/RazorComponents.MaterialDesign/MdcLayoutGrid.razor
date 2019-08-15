@@ -12,9 +12,7 @@
 </div>
 
 @code {
-    [Parameter]
-    IEnumerable<GridItem> Items { get; set; }
+    [Parameter] public IEnumerable<GridItem> Items { get; set; }
 
-    [Parameter]
-    RenderFragment<GridItem> Cell { get; set; }
+    [Parameter] public RenderFragment<GridItem> Cell { get; set; }
 }

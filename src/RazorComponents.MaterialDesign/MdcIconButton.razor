@@ -1,19 +1,19 @@
 ﻿@inherits MdcComponentBase
 @inject IJSRuntime jsRuntime
-<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref="buttonElem" disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
+<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref:suppressField="buttonElem" disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
     @Icon
 </button>
-@functions {
+@code {
 
-    ElementRef buttonElem;
+    ElementReference buttonElem;
 
-    [Parameter] string Title { get; set; } = "";
-    [Parameter] string Type { get; set; } = "button";
-    [Parameter] bool Enabled { get; set; } = true;
-    [Parameter] string Icon { get; set; }
-    [Parameter] EventCallback OnClick { get; set; }
-    [Parameter] string Class { get; set; }
-    [Parameter] string DialogAction { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Type { get; set; } = "button";
+    [Parameter] public bool Enabled { get; set; } = true;
+    [Parameter] public string Icon { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Class { get; set; }
+    [Parameter] public string DialogAction { get; set; }
 
     protected override Task OnAfterFirstRenderAsync()
         => jsRuntime.InvokeAsync<object>("BlazorMaterial.iconButton.init", buttonElem);

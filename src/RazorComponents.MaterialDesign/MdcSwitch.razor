@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<div class="mdc-switch" @ref=switchElem>
+<div class="mdc-switch" @ref:suppressField=switchElem>
     <div class="mdc-switch__track"></div>
     <div class="mdc-switch__thumb-underlay">
         <div class="mdc-switch__thumb">
@@ -11,14 +11,14 @@
 
 <label for="@id" style="margin-left: 1rem;">@Label</label>
 
-@functions {
-    ElementRef switchElem;
+@code {
+    ElementReference switchElem;
     string id = Guid.NewGuid().ToString();
 
-    [Parameter] string Label { get; set; } = "On/off";
-    [Parameter] bool Checked { get; set; }
-    [Parameter] EventCallback<bool> CheckedChanged { get; set; }
-    [Parameter] EventCallback OnChange { get; set; }
+    [Parameter] public string Label { get; set; } = "On/off";
+    [Parameter] public bool Checked { get; set; }
+    [Parameter] public EventCallback<bool> CheckedChanged { get; set; }
+    [Parameter] public EventCallback OnChange { get; set; }
 
     async Task HandleChangeAsync()
     {

@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<aside @ref="drawerElem" class="@CssClass" id="app-drawer">
+<aside @ref:suppressField="drawerElem" class="@CssClass" id="app-drawer">
     <div class="mdc-drawer__content">
         <CascadingValue Value="@this">
             @ChildContent
@@ -8,16 +8,16 @@
     </div>
 </aside>
 
-@functions {
-    ElementRef drawerElem;
+@code {
+    ElementReference drawerElem;
     bool isOpen;
     string CssClass => $"mdc-drawer mdc-drawer--dismissible { (StartOpen ? "mdc-drawer--open" : "") }";
 
-    [Parameter] RenderFragment ChildContent { get; set; }
-    [Parameter] bool StartOpen { get; set; }
-    [Parameter] bool CloseOnNavigate { get; set; } = true;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool StartOpen { get; set; }
+    [Parameter] public bool CloseOnNavigate { get; set; } = true;
 
-    protected override void OnInit()
+    protected override void OnInitialized()
     {
         isOpen = StartOpen;
     }

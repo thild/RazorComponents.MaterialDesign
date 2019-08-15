@@ -6,14 +6,14 @@ See <code>Dialog.cshtml</code> for sources.
 
 Note that the user can also press 'escape' to dismiss the dialog, and this produces a different result string.
 
-<p><MdcButton onclick="@ShowDialog">Show dialog</MdcButton></p>
+<p><MdcButton @onclick="ShowDialog">Show dialog</MdcButton></p>
 
 @if (result != null)
 {
     <p>Result: <strong>@result</strong></p>
 }
 
-<MdcDialog @ref="@myDialog" Title="My dialog title">
+<MdcDialog @ref:suppressField="@myDialog" Title="My dialog title">
     <Body>
         Please choose a fruit.
     </Body>
@@ -23,7 +23,7 @@ Note that the user can also press 'escape' to dismiss the dialog, and this produ
     </Buttons>
 </MdcDialog>
 
-@functions {
+@code {
     MdcDialog myDialog;
     string result;
 

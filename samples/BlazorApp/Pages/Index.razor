@@ -7,7 +7,7 @@
 
 <p>Currently executing on <strong>@runtime</strong>.</p>
 
-@functions {
+@code {
     string runtime = RuntimeInformation.IsOSPlatform(OSPlatform.Create("WEBASSEMBLY"))
         ? "Mono WebAssembly"
         : ".NET Core";
