@@ -2,7 +2,7 @@
 @inject IJSRuntime jsRuntime
 
 <div @ref="selectElem" class="mdc-select">
-  <select @attributes="@Attributes" class="mdc-select__native-control" value=@Value @onchange=@OnValueChangedAsync>
+  <select @attributes="@AdditionalAttributes" class="mdc-select__native-control" value=@Value @onchange=@OnValueChangedAsync>
     @ChildContent
   </select>
   <label class="mdc-floating-label">@Label</label>
