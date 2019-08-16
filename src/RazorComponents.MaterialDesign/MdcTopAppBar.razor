@@ -1,7 +1,7 @@
 ﻿@inherits MdcComponentBase
 @inject IJSRuntime jsRuntime
 
-<header @ref:suppressField="headerElem" class="@CssClass" id="app-bar">
+<header @ref:headerElem="headerElem" class="@CssClass" id="app-bar">
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <a @onclick=@OnNavClicked class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>

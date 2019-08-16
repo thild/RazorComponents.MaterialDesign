@@ -1,6 +1,6 @@
 ﻿@inherits MdcComponentBase
 @inject IJSRuntime jsRuntime
-<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref:suppressField="buttonElem" disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
+<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref:buttonElem="buttonElem" disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
     @Icon
 </button>
 @code {

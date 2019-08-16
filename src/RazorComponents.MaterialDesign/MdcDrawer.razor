@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<aside @ref:suppressField="drawerElem" class="@CssClass" id="app-drawer">
+<aside @ref:drawerElem="drawerElem" class="@CssClass" id="app-drawer">
     <div class="mdc-drawer__content">
         <CascadingValue Value="@this">
             @ChildContent
