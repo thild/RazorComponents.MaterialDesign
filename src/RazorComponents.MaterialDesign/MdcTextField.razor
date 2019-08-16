@@ -1,7 +1,7 @@
 ﻿@inherits MdcInputComponentBase<string>
 @inject IJSRuntime jsRuntime
     
-<div @ref:textFieldElem="textFieldElem" class="mdc-text-field">
+<div @ref="textFieldElem" @ref:suppressField  class="mdc-text-field">
     <input type="@Type" id=@id class="mdc-text-field__input @FieldClass"
            @bind=@CurrentValue />
 

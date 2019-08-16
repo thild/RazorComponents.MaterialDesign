@@ -1,7 +1,7 @@
 ﻿@inherits MdcComponentBase
 @inject IJSRuntime jsRuntime
 
-<div @ref:selectElem="selectElem" class="mdc-select">
+<div @ref="selectElem"  @ref:suppressField  class="mdc-select">
   <select @attributes="@AdditionalAttributes" class="mdc-select__native-control" value=@Value @onchange=@OnValueChangedAsync>
     @ChildContent
   </select>
