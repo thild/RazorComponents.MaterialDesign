@@ -151,7 +151,7 @@ namespace RazorComponents.MaterialDesign
         /// some combination of "modified", "valid", or "invalid", depending on the status of the field.
         /// </summary>
         protected string FieldClass
-            => EditContext?.FieldClass(FieldIdentifier) ?? string.Empty;
+            => EditContext.FieldCssClass(FieldIdentifier);
 
         /// <summary>
         /// Gets a CSS class string that combines the <see cref="Class"/> and <see cref="FieldClass"/>

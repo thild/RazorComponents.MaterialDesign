@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<aside @ref="drawerElem" @ref:suppressField class="@CssClass" id="app-drawer">
+<aside @ref="drawerElem" class="@CssClass" id="app-drawer">
     <div class="mdc-drawer__content">
         <CascadingValue Value="@this">
             @ChildContent
@@ -39,9 +39,9 @@
         }
     }
 
-    protected override Task OnAfterRenderAsync()
+    protected override Task OnAfterRenderAsync(bool firstRender)
         => jsRuntime.InvokeAsync<object>(
             "BlazorMaterial.drawer.toggle",
             drawerElem,
-            isOpen);
+            isOpen).AsTask();
 }

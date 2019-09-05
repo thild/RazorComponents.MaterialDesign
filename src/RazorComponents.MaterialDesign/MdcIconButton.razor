@@ -1,6 +1,6 @@
 ﻿@inherits MdcComponentBase
 @inject IJSRuntime jsRuntime
-<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref="buttonElem" @ref:suppressField  disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
+<button @attributes="@AdditionalAttributes" title="@Title" type="@Type" @ref="buttonElem" disabled="@(!Enabled)" class="mdc-icon-button material-icons @Class" data-mdc-dialog-action="@DialogAction" @onclick="@OnClick">
     @Icon
 </button>
 @code {
@@ -16,6 +16,6 @@
     [Parameter] public string DialogAction { get; set; }
 
     protected override Task OnAfterFirstRenderAsync()
-        => jsRuntime.InvokeAsync<object>("BlazorMaterial.iconButton.init", buttonElem);
+        => jsRuntime.InvokeAsync<object>("BlazorMaterial.iconButton.init", buttonElem).AsTask();
 
 }

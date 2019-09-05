@@ -14,13 +14,10 @@ namespace RazorComponents.MaterialDesign
         /// </summary>
         [Parameter(CaptureUnmatchedValues = true)] public IReadOnlyDictionary<string, object> AdditionalAttributes { get; set; }
 
-        bool isFirstRender = true;
-
-        protected override Task OnAfterRenderAsync()
+        protected override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (isFirstRender)
+            if (firstRender)
             {
-                isFirstRender = false;
                 return OnAfterFirstRenderAsync();
             }
             else

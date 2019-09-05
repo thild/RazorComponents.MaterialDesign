@@ -1,10 +1,10 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<div class="mdc-switch" @ref="switchElem" @ref:suppressField >
+<div class="mdc-switch" @ref="switchElem" >
     <div class="mdc-switch__track"></div>
     <div class="mdc-switch__thumb-underlay">
         <div class="mdc-switch__thumb">
-            <input type="checkbox" id="@id" checked=@Checked @onchange=@HandleChangeAsync class="mdc-switch__native-control" role="switch" />
+            <input type="checkbox" id="@id" checked="@Checked" @onchange="HandleChangeAsync" class="mdc-switch__native-control" role="switch" />
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
         await OnChange.InvokeAsync(null);
     }
 
-    protected override Task OnAfterRenderAsync()
+    protected override Task OnAfterRenderAsync(bool firstRender)
         => jsRuntime.InvokeAsync<object>(
-                "BlazorMaterial.switch.setChecked", switchElem, Checked);
+                "BlazorMaterial.switch.setChecked", switchElem, Checked).AsTask();
 }

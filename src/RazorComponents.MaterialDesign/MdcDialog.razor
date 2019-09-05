@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime jsRuntime
 
-<div @ref="dialogElem" @ref:suppressField  class="mdc-dialog">
+<div @ref="dialogElem" class="mdc-dialog">
   <div class="mdc-dialog__container">
     <div class="mdc-dialog__surface">
       <h2 class="mdc-dialog__title">@Title</h2>
@@ -20,9 +20,9 @@
 
     ElementReference dialogElem;
 
-    public Task<string> ShowAsync()
+    public ValueTask<string> ShowAsync()
         => jsRuntime.InvokeAsync<string>("BlazorMaterial.dialog.show", dialogElem);
 
-    public Task HideAsync()
+    public ValueTask<string> HideAsync()
         => jsRuntime.InvokeAsync<string>("BlazorMaterial.dialog.hide", dialogElem);
 }
