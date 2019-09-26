@@ -4,6 +4,6 @@
         <AspNetCoreExtensionsVersion>3.0.0</AspNetCoreExtensionsVersion>
         <SystemVersion>4.6.0</SystemVersion>
         <ComponentsPackageVersion>3.0.0</ComponentsPackageVersion>
-        <BlazorMonoVersion>3.0.0-preview9.19462.2</BlazorMonoVersion>
+        <BlazorMonoVersion>3.0.0-preview9.19465.2</BlazorMonoVersion>
     </PropertyGroup>
 </Project>
