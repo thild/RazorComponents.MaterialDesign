@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="$(ComponentsPackageVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="$(BlazorMonoVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(ComponentsPackageVersion)" />
   </ItemGroup>
 

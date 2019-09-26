@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="$(ComponentsPackageVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="$(ComponentsPackageVersion)" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="$(ComponentsPackageVersion)" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="$(BlazorMonoVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="$(BlazorMonoVersion)" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="$(BlazorMonoVersion)" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>

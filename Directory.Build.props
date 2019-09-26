@@ -1,8 +1,9 @@
 <Project>
     <PropertyGroup>
-        <AspNetCoreVersion>3.0.0-preview9.19424.4</AspNetCoreVersion>
-        <AspNetCoreExtensionsVersion>3.0.0-preview9.19423.4</AspNetCoreExtensionsVersion>
-        <SystemVersion>4.6.0-preview9.19421.4</SystemVersion>
-        <ComponentsPackageVersion>3.0.0-preview9.19424.4</ComponentsPackageVersion>
+        <AspNetCoreVersion>3.0.0</AspNetCoreVersion>
+        <AspNetCoreExtensionsVersion>3.0.0</AspNetCoreExtensionsVersion>
+        <SystemVersion>4.6.0</SystemVersion>
+        <ComponentsPackageVersion>3.0.0</ComponentsPackageVersion>
+        <BlazorMonoVersion>3.0.0-preview9.19462.2</BlazorMonoVersion>
     </PropertyGroup>
 </Project>
